@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방탈출 1423</title>
+    <style>
+        #levelOneBox {
+            width: 300px;
+            text-align: center;
+            background-color: rgb(233, 147, 35);
+            height: 120px;
+            border: 1px solid gray;
+            border-radius: 20px;
+        }
+        #levelOneBox input {
+            width: 100px;
+            height: 20px;
+        }
+        #levelOneBox input:hover {
+            animation: inputHover 0.5s ease-in-out;
+        }
+        @keyframes inputHover {
+            form {
+                border: 3px solid rgba(255, 255, 255, 0);
+            }
+            to {
+                border: 3px solid rgba(0, 183, 255, 1);
+            }
+        }
+    </style>
+</head>
+<body id="level-1">
+    <div id="levelOneBox">
+        <h2>방탈출</h2>
+        <input type="text" id="levelOneInput" />
+    </div>
+    <script>
+        document.querySelector('#levelOneBox #levelOneInput').addEventListener('input' function(){
+            if (document.querySelector('#levelOneBox #levelOneInput').value === '1423') {
+                document.body.id = 'level-2';
+            }
+        });
+    </script>
+</body>
+</html>
