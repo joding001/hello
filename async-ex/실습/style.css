@@ -1,0 +1,59 @@
+body, ul {
+	
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+body, html {
+
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+	
+	background-color: #fff1c6;
+	background-image: url(images/bg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#sunban-wrapper {
+
+    width: 780px;
+    margin: 50px auto;
+}
+
+#control-wrapper {
+
+	width: 300px;
+	height: 420px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+/*
+	이미지 6개씩 위 아래로 images/sunban.png 위에 배치해보세요.
+*/
+
+
+.money li {
+
+	cursor: pointer;
+}
+
+.gun {
+	
+	width: 300px;
+	height: 250px;
+	background-image: url(images/gun.png);
+	cursor: pointer;
+} 
+/*
+	총 이미지를 확인하여 총을 쏠때 총이 바뀌게 해보세요.
+*/

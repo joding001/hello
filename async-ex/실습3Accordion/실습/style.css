@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300italic);
+
+body, ul, h2, p  {
+    
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    list-style-type: none;
+}
+
+img {
+
+    vertical-align: bottom;
+}
+
+body {
+
+    background-color: #ddd;
+    font-family: arial;
+    color: #999;
+}
+
+.wrapper {
+
+    width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+}
+
+.ninja {
+
+}
+
+.ninja .tt {
+
+    background-color: #fff;
+	position:relative;
+}
+
+.ninja .tt h2 {
+
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    text-align: right;
+    color: #666;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+	background-image:url(images/sprite.png);
+	background-repeat:no-repeat;
+}
+/*
+    mouse를 올리면
+    커서가 클릭커서로 바뀌고
+    배경색이 흰색으로 되게 만들어보세요.
+*/
+.ninja .tt h2:hover {
+    background-color: white;
+    cursor: pointer;
+}
+/*
+    open이라는 CLASS가 붙으면 
+    타이틀색이 녹색,
+    -는 +로
+    배경색은 흰색으로 만들어보세요.
+*/
+.ninja .tt h2.open{
+    color: green;
+    background-position: left bottom;
+    background-color: white;
+}
+/*
+    텍스트를 오른쪽에
+    이미지를 왼쪽에 배치시키고
+    jQuery를 사용하기 위하여 안보이게 하세요.
+*/
+.tt p{
+	padding:20px 20px 20px 300px;
+    text-align: right;
+    display: none;
+}
+
+.tt img{
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    display: none;
+}

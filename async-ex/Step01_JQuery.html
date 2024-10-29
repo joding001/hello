@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 작동안함
+        // $('div').fadeOut();
+    </script>
+    <script>
+        // div가 안읽힌 상태
+        // $('div').fadeOut();
+        </script>
+</head>
+<body>
+    <div>
+        <h3 id="idH3">1. ID요소선택</h3>
+        <p>$('#idH3')</p>
+    </div>
+    <div>
+        <h3 class="clsH3">2. CLASS 요소선택</h3>
+        <h3 class="clsH3">2. CLASS 요소선택</h3>
+        <p>$('.clsH3')</p>
+        <p>$($('.clsH3')[0]).fadeOut();</p>
+    </div>
+    <div>
+        <h3 class="clickH3">3. CLICK 이벤트</h3>
+        <p>
+            $('.clickH3').click(function(){
+            $('.clickH3').fadeOut();
+            });
+        </p>
+    </div>
+    <div>
+        <h3 class="cssH3">4. CSS 변경</h3>
+        <p>
+            $()
+        </p>
+    </div>
+    <div>
+        <h3 class="textH3">5. Text 변경</h3>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $($('.clsH3')[0]).fadeOut();
+        $('.clickH3').click(function(){
+            $('.clickH3').fadeOut();
+        });
+        $('.cssH3').css('color', 'red');
+        $('.textH3').text('TEXT');
+
+        console.log($('div'));
+        // 요소명으로 조작
+        $('div').css('background-color','blue');
+        // 클래스명으로 조작
+        $('clsH3').css('font-weight','bold');
+    </script>
+</body>
+</html>

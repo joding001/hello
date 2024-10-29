@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <input type="text" name="id" />
+    <input type="password" name="pwd" />
+    <input type="email" name="email" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // 모두 선택
+        $('*').css('color','red');
+
+        // 다중 선택
+        $('div, p').text('다중선택');
+
+        // attr를 이용한 선택
+        $('[type=text]').val('아이디');
+
+        // 짝수번째 div 선택 후 동작
+        $('div:even').css('background-color', 'yellow');
+
+        // 홀수번째 div 선택 후 동작
+        $('div:odd').css('background-color', '#999');
+
+        // 첫번째 div 선택 후 동작
+        $('div:first').css('font-weight', 'bold');
+
+        // 마지막 div 선택 후 동작
+        $('div:last').css('font-style', 'italic');
+        </script>
+</body>
+</html>

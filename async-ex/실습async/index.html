@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>젤다 유저 리스트</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-pattern"></div>
+    <div class="container">
+      <header>
+        <div class="filters">
+          <input type="text" id="searchInput" placeholder="이름으로 검색" />
+        </div>
+      </header>
+      <main>
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>사진</th>
+              <th>이름</th>
+              <th>성별</th>
+              <th>
+                <select id="raceFilter">
+                  <option value="">종족</option>
+                  <option value="인간">인간</option>
+                  <option value="겔드">겔드</option>
+                  <option value="고론">고론</option>
+                  <option value="리토">리토</option>
+                  <option value="조라">조라</option>
+                </select>
+              </th>
+              <th>가입일<button id="sortDateButton">내림차순으로 정렬</button></th>
+            </tr>
+          </thead>
+          <tbody id="userList">
+            <!-- 유저 정보는 JavaScript에서 동적으로 추가 -->
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

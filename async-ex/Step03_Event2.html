@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_Event2</title>
+    <style>
+        div {width: 100px;height: 100px;border: 1px solid red;}
+    </style>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('.box').on('mouseover', function(){
+            $(this).css('background-color','yellow')
+        });
+
+        $('.box').on('mouseout', function(){
+            $(this).css('background-color','white')
+        })
+    </script>
+</body>
+</html>

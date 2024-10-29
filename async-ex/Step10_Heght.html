@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_Heght</title>
+    <style>
+        .box {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('.box').width(100).height(100); // width랑 height 설정
+
+        const boxWidth = $('.box').width();
+        const boxHeight = $('.box').height();
+        $('.box').text(`${boxWidth}, ${boxHeight}`)
+    </script>
+</body>
+</html>

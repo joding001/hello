@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_Selector</title>
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        /*
+            [ children 메서드 ]
+            자식요소를 선택할 수 있는 메서드
+        */
+        console.log($('ul'));
+        $('ul').children().text('hello!');
+        $('ul').children('li:nth-child(2)').css('color','red');
+
+        /*
+            [ siblings 메서드 ]
+            본인 제외 형제요소를 선택할 수 있는 메서드
+        */
+        console.log($('li').eq(1).siblings());
+        $('li').eq(1).siblings().css({color : 'blue'});
+
+        /*
+            [ next 메서드 ]
+            본인 다음 요소를 선택할 수 있는 메서드
+        */
+        $('li').eq(1).next().css({color : 'green'});
+        
+        /*
+        [ prev 메서드 ]
+        본인 이전 요소를 선택할 수 있는 메서드
+        */
+        $('li').eq(1).prev().css({color : 'orange'});
+       
+    </script>
+</body>
+</html>

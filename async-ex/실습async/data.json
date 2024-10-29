@@ -1,0 +1,58 @@
+[
+  {
+    "name": "링크",
+    "isMen": true,
+    "kind": "인간",
+    "imgSrc": "img/thumb1.png",
+    "date": 20240201
+  },
+  {
+    "name": "젤다",
+    "isMen": false,
+    "kind": "인간",
+    "imgSrc": "img/thumb2.png",
+    "date": 20230204
+  },
+  {
+    "name": "가논",
+    "isMen": true,
+    "kind": "겔드",
+    "imgSrc": "img/thumb3.png",
+    "date": 20220412
+  },
+  {
+    "name": "우르보사",
+    "isMen": false,
+    "kind": "겔드",
+    "imgSrc": "img/thumb4.png",
+    "date": 20220105
+  },
+  {
+    "name": "다르케르",
+    "isMen": true,
+    "kind": "고론",
+    "imgSrc": "img/thumb5.png",
+    "date": 20220224
+  },
+  {
+    "name": "윤돌",
+    "isMen": true,
+    "kind": "고론",
+    "imgSrc": "img/thumb6.png",
+    "date": 20230204
+  },
+  {
+    "name": "리발",
+    "isMen": true,
+    "kind": "리토",
+    "imgSrc": "img/thumb7.png",
+    "date": 20190102
+  },
+  {
+    "name": "미파",
+    "isMen": false,
+    "kind": "조라",
+    "imgSrc": "img/thumb8.png",
+    "date": 20220812
+  }
+]

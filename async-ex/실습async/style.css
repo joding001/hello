@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  font-family: "NanumSquareRound", sans-serif;
+  color: #e6e0d2;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #e6e0d2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgba(12, 28, 44, 0.8);
+  border: 2px solid #e2d8b5;
+  color: #e2d8b5;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(226, 216, 181, 0.3);
+  appearance: none; /* 기본 select 스타일 제거 */
+  -webkit-appearance: none; /* Safari를 위한 속성 */
+  -moz-appearance: none; /* Firefox를 위한 속성 */
+  cursor: pointer;
+}
+#raceFilter {
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  border: 0px solid #e6e0d2;
+  color: #e2d8b5;
+  border-radius: 5px;
+  text-shadow: 0 0 5px rgba(226, 216, 181, 0.5);
+  font-weight: bold;
+  outline: none !important;
+  appearance: none; /* 기본 select 스타일 제거 */
+  -webkit-appearance: none; /* Safari를 위한 속성 */
+  -moz-appearance: none; /* Firefox를 위한 속성 */
+}
+
+#raceFilter option {
+  background-color: rgba(12, 28, 44, 0.9);
+  color: #e2d8b5;
+  padding: 10px;
+}
+
+#raceFilter option:checked {
+  background-color: rgba(12, 28, 44, 1);
+  color: #e2d8b5;
+  font-weight: bold;
+}
+
+#raceFilter option:hover {
+  background-color: rgba(226, 216, 181, 0.3);
+}
+
+#raceFilter {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23e2d8b5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+#searchInput {
+  flex-grow: 1;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+#userTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: rgba(12, 28, 44, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(226, 216, 181, 0.3);
+  overflow: hidden;
+}
+
+#userTable th,
+#userTable td {
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(226, 216, 181, 0.3);
+}
+
+#userTable thead tr {
+  background-color: rgba(12, 28, 44, 1);
+}
+
+#userTable th {
+  font-weight: bold;
+  color: #e2d8b5;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(226, 216, 181, 0.5);
+}
+
+#userTable tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+#userTable tbody tr:hover {
+  background-color: rgba(226, 216, 181, 0.1);
+}
+
+#userTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#userTable img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #e2d8b5;
+  box-shadow: 0 0 10px rgba(226, 216, 181, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+
+#sortDateButton {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #e6e0d2;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #e6e0d2;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+#sortDateButton:hover {
+  background-color: rgba(230, 224, 210, 0.3);
+}

@@ -1,0 +1,106 @@
+body, h1, h3, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+html, body {
+    height: 100%;
+    background-color: #fff;
+	overflow:hidden;
+}
+
+::selection {
+
+    background-color: transparent;
+}
+
+#header {
+
+    width: 200px;
+    height: 200px;
+    background-image: url(logo.png);
+    margin: 50px auto;
+    text-indent: -9999px;
+    position: relative;
+}
+
+#header .nav {
+
+    display: block;
+    width: 70px;
+    height: 100px;
+    background-image: url(arr-sprite.png);
+    text-indent: -9999px; 
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    cursor: pointer;
+}
+
+#header .nav#prev {
+
+    left: -170px;
+}
+
+#header .nav#next {
+
+    background-position: right;
+    right: -170px;
+}
+
+#header .nav:hover {
+
+    opacity: 1;
+}
+
+#sushi-list .sushi-name {
+	position : relative;
+    width: 70px;
+    margin: 15px;
+    text-align: center;
+    line-height: 50px;
+    z-index: 999;
+    font-size: 20px;
+    color: red;
+    border-bottom: 3px solid red;
+    font-family: 'Dosis', sans-serif;
+    top: 0;
+    left: 0;
+}
+
+/*
+    스시 이미지를 확인하여 bottom에 1줄로 고정시키고
+    jQuery 애니메이션을 활용하기 위해
+    li에 top값을 원하는대로 주세요.
+*/
+#sushi-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+}
+
+#sushi-list li{
+    float: left;
+    position: relative;
+    top: 0;
+}
+
+#sushi-list ul{
+    width: 100%;
+    overflow: visible;
+    height: 340px;
+}

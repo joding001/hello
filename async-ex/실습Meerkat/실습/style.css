@@ -1,0 +1,54 @@
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+body {
+  background-image: url(bg.png);
+  background-position: center top;
+  background-attachment: fixed;
+  color: #000;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.wrapper .face {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.wrapper .face li {
+  position: relative;
+}
+
+.wrapper .contents {
+  background-color: #532b23;
+  position: relative;
+  border-bottom: 3px solid #1f0905;
+  border-radius: 10px;
+}
+
+.wrapper .contents li {
+  display: none;
+  position: absolute;
+}
+
+.wrapper .contents li img {
+  margin: 20px;
+  border-bottom: 3px solid #1f0905;
+  border-radius: 10px;
+}

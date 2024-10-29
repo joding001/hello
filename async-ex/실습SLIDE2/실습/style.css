@@ -1,0 +1,137 @@
+body, ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+li {
+
+    list-style-type: none;
+}
+
+img {
+
+    vertical-align: bottom;
+}
+
+body {
+
+    background-color: #000;
+    background-image: url(bg.png); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+}
+
+.main {
+
+    width: 960px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.canvas {
+
+    background-color: #000;
+    overflow:hidden;
+}
+
+.canvas li {
+	
+}
+
+.canvas .cover {
+	position:absolute;
+	z-index:10;
+}
+
+/*
+    slide를 1줄로 나열해보세요.
+*/
+.hero-slide {
+    position: relative;
+    right: 0;
+    height: 400px;
+    width: 4800px;
+}
+
+.hero-slide li{
+    float: left;
+}
+
+.canvas img {
+
+   width: 100%; 
+}
+
+.icons {
+
+    width: 950px;
+    margin: 20px auto;
+}
+
+.icons a {
+
+    display: block;
+    width: 150px;
+    height: 150px;
+    float: left;
+    text-indent: -9999px;
+    border-radius: 100%;
+    margin: 10px;
+    border: 10px solid black;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+/*
+    .icons a에 active가 붙으면
+    border-color가 투명해지고
+    border-top-left-radius에 10px
+    opacity를 1로 만들어보세요.
+
+*/
+.icons a.active {
+    border-color: #ff000000;
+    border-top-left-radius: 10px;
+    opacity: 1;
+}
+
+.icons a.icon01 { background-image: url(icon01.png); }
+.icons a.icon02 { background-image: url(icon02.png); }
+.icons a.icon03 { background-image: url(icon03.png); }
+.icons a.icon04 { background-image: url(icon04.png); }
+.icons a.icon05 { background-image: url(icon05.png); }
+
+.arrow {
+
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 30px;
+    width: 110px; 
+    height: 80px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.arrow a {
+
+    display: inline-block;
+    width: 30px;
+    height: 80px; 
+    background-image: url(arrow.png);
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.arrow a.next {
+
+    background-position: right top;
+}
+
+.arrow a:hover {
+
+    background-position-y: bottom;
+}

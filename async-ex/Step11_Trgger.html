@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step11_Trgger</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">box</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('.box').on({click : function(){
+            $('.box').animate({marginLeft : 50});
+        }});
+        /*
+            [ Trigger 메서드 ]
+            이벤트를 직접 제어하기 않아도 이벤트를 발생하게 해주는 메서드
+        */
+        $('.box').delay(1000).trigger('click');
+    </script>
+</body>
+</html>

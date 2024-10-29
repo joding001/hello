@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_Event1</title>
+    <style>
+        #friendList li:hover {
+            background: yellow;
+            cursor : pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="myBtn">CLICK</button>
+    <ul id="friendList">
+        <li>짱구</li>
+        <li>짱아</li>
+        <li>흰둥이</li>
+        <li>철수</li>
+    </ul>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('#friendList li').on('click',function(){
+            console.log(this);
+            $(this).text('CLICK!').css({color:'blue'})
+        });
+        // off() 이벤트 제거메서드 : 기존에 첨부된 모든 이벤트 제거
+        $('#friendList li').off().on('click',function(){
+            console.log(this);
+            $(this).css({color:'red'})
+        });
+    </script>
+</body>
+</html>

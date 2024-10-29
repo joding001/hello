@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step16_Index</title>
+</head>
+<body>
+    <div>div01</div>
+    <div>div02</div>
+    <div>div03</div>
+    <div>div04</div>
+    <div>div05</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        /*
+            [ index ]
+            요소의 index(순번)을 알려주는 메서드
+        */
+        let idx = $('div').eq(1).index();
+        console.log(idx);
+
+        $('div').on('click', function(){
+            console.log($(this).index());
+        })
+       
+    </script>
+</body>
+</html>
