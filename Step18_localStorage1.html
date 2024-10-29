@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step18_localStorage1</title>
+</head>
+<body>
+    
+    <script>
+    /*
+        [ 로컬스토리지 / 세션스토리지 ]
+        - 서버와는 다른 별개의 브라우저의 저장공간
+        - Applcation탭 -> Local Storage / Session Storage
+        - key : value 형태로 문자, 숫자 데이터 저장가능, 5MB까지만 저장가능
+        
+        - 로컬스토리지 : 브라우저 재접속해도 영구적으로 남아있다.
+        - 세션스토리지 : 브라우저 종료 시 데이터가 사라진다.
+    */    
+
+    // 자료 저장하는 법
+    localStorage.setItem('이름', '짱구');
+
+    // 자료 꺼내는 법
+    const localName = localStorage.getItem('이름');
+    console.log(localName);
+
+    localStorage.removeItem('이름');
+
+    // sessionStorage로 바꾸면 세션스토리지에 저장 가능
+    
+    
+    </script>
+</body>
+</html>

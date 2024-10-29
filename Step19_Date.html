@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step18_localStorage1</title>
+</head>
+<body>
+    
+    <script>
+        const now = new Date();
+        console.log(now); // 현재 날짜, 시간 출력
+        
+        console.log(now.getFullYear()); // 연도출력
+        console.log(now.getMonth() + 1); // 월 출력
+        console.log(now.getDate()); // 일 출력
+
+        console.log(now.getHours()); // 시간 출력
+        console.log(now.getMinutes()) // 분 출력
+        console.log(now.getSeconds()) // 초 출력
+
+        const date = new Date();
+        date.setFullYear(2023); // 연도변경
+        date.setMonth(11); // 월 변경
+        date.setDate(25); // 일 변경
+        console.log(date);
+
+        console.log(now.getTime()); // 현재시간의 밀리초 1s = 1000ms
+        
+        const future = new Date();
+        future.setTime(now.getTime() + 1000 * 60 * 60 * 2) // 2시간 후
+        console.log(future)
+
+        console.log(now.toLocaleDateString()); // 지역 설정에 맞는 날짜 출력
+        console.log(now.toLocaleTimeString()); // 지역 설정에 맞는 시간 출력
+        console.log(now.toISOString()); // 국제표준 날짜, 시간 형식
+    </script>
+</body>
+</html>
