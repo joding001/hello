@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step22_Prototype2</title>
+</head>
+<body>
+    <script>
+        /*
+            __proto__를 직접 등록하면 object끼리 상속기능을 구현가능
+        */
+        function Attend(n,a){
+            this.name = n;
+            this.age = a;
+            this.chk = function(){
+                console.log(`${this.name} ${thiis.age}살 출석완료`);
+            }
+        }
+
+        Attend.prototype.school = '팡팡유치원';
+
+        const parent = { name : '짱구' };
+        const child = {};
+
+        child.__proto__ = parent;
+        console.log(child);
+        console.log(child.__proto__);
+        console.log(child.name);
+        child.__proto__ = Attend.prototype
+        console.log(child.school);
+    </script>
+</body>
+</html>

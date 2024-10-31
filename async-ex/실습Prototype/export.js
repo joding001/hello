@@ -26,23 +26,29 @@ let img = [
   "img/25.webp",
 ];
 
-
 // for (let i = 0; i < array.length; i++) {
   
 
 // }
 
-Element.prototype.zImg = function(zIndex){
-  this.style.zIndex = zIndex;
-}
-
-document.querySelector('div#gallery').zImg();
-
-function MakeImg(indexNum) {
-  let galleryImage = document.createElement('img');
-  galleryImage.style.src = ''
-  document.querySelector('div#gallery')
-  indexNum
+export function MakeImg(indexNum) {
+  let galleryImage = new Image();
+  galleryImage.src = `img/${indexNum}.webp`
+  galleryImage.style.width = `${parseInt(Math.random() * 400) + 100}px`
+  let leftNum = -galleryImage.style.width;
+  galleryImage.style.left = leftNum + 'px'
+  document.querySelector('div#gallery').appendChild(galleryImage);
+  this.zImg = function(zIndex){
+    galleryImage.style.zIndex = zIndex;
+  }
+  this.speedImg = function(speed, delay){
+    setTimeout(function(){
+      setInterval(function(){
+        leftNum++;
+        galleryImage.style.left = leftNum + 'px'
+      }, speed)
+    }, delay * 10)
+  }
 }
 
 /*

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step23_Import</title>
+</head>
+<body>
+    <script type="module">
+        // export한 것을 import
+        import { a as c, b } from './export.js'
+        console.log(c); // a의 이름을 c로 바꿈 : as
+        console.log(b);
+
+
+        import { add } from './export.js'
+
+        const sum = add(3,5);
+        console.log(sum)
+
+        // export default 사용 시
+        import PP from './export.js'
+        console.log(PP)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step21_Constructor</title>
+</head>
+<body>
+    <script>
+        /*
+            [ Constructor 생성자함수 ]
+            오브젝트 복사해주느 문법
+            만들어진 오브젝트들은 생성자함수에서 속성들을 그대로 물려받음(상속)
+
+            function 오브젝트생성기계(){
+                this.name = '짱구';
+                this.age = 5;
+            }
+
+            const 오브젝트1 = new 오브젝트생성기계();
+            const 오브젝트2 = new 오브젝트생성기계();
+            const 오브젝트3 = new 오브젝트생성기계();
+
+            this는 새로생성될 오브젝트를
+        */
+
+        function Student(n, a, g){
+            this.name = n;
+            this.age = a;
+            this.grade = g;
+
+            this.introduce = function(){
+                console.log(`${this.name}, ${this.age}살, ${this.grade} 입니다.`)
+            }
+        }
+
+        const stu1 = new Student('짱구', 5, '해바라기반');
+        const stu2 = new Student('짱아', 2, '장미반');
+
+        stu1.introduce();
+        stu2.introduce();
+    </script>
+</body>
+</html>

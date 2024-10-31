@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step20_New</title>
+</head>
+<body>
+    <script>
+        const str = String(1234);
+        const num = Number(1234);
+        
+        const obj1 = {}; // 권장사항
+        const obj2 = new Object(); // 생성자함수 사용
+
+        const arr1 = []; // 권장사항
+        const arr2 = new Array(); // 생성자함수 사용(new 생략가능)
+
+        const arr3 = new Array(5);
+        const arr4 = new Array(1,2,3);
+
+        const now = new Date();
+        const regex = new RegExp('sbs', 'i');
+
+        try {
+            throw new Error('에러!')
+        } catch(e) {
+            console.log(e.message);
+        }
+
+        const map = new Map();
+        const set = new Set();
+
+        const promise = new Promise((res,rej)=>{
+
+        });
+
+
+        new MouseEvent('mouseup', {});
+        const clickEvent = new Event('click');
+
+        const img = new Image();
+        img.src = 'async-ex/images/curby.jpg';
+        console.log(img);
+    </script>
+</body>
+</html>

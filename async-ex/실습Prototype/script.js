@@ -15,8 +15,13 @@
 
 */
 
+import { MakeImg } from './export.js';
+
 
 let div0 = new MakeImg(parseInt(Math.random() * 24) + 1);
+div0.speedImg(10, 10);
+div0.zImg(20);
+
 /*
 let div1 = new MakeImg(parseInt(Math.random() * 24) + 1);
 let div2 = new MakeImg(parseInt(Math.random() * 24) + 1);
@@ -25,8 +30,6 @@ let div4 = new MakeImg(parseInt(Math.random() * 24) + 1);
 let div5 = new MakeImg(parseInt(Math.random() * 24) + 1);
 let div6 = new MakeImg(parseInt(Math.random() * 24) + 1);
 
-div0.speedImg(10, 10);
-div0.zImg(20);
 div1.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
 div1.zImg(parseInt(Math.random()*10));
 div2.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));

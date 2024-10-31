@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step22_Prototype1</title>
+</head>
+<body>
+    <script>
+        /*
+            [ Prototype ]
+            오브젝트생성기계.prototype = 오브젝트생성기계의 유전자
+
+            - 프로토타입은 값을 여러개 부여 가능(함수도 가능)
+            - 프로토타입에 추가된 데이터는 자식이 직접 가지지 않고 부모만 가짐
+        */
+
+        function Person(n, a) {
+            this.name = n;
+            this.age = a;
+        }
+
+        Person.prototype.school = '팡팡유치원';
+        Person.prototype.introduce = function(){
+            console.log(`${this.school}의 ${this.name}, ${this.age}살`);
+        };
+
+        const per1 = new Person('짱구', 5);
+        const per2 = new Person('짱아', 2);
+
+        console.log(Person.prototype); // 부모(생성자함수)의 유전자검색
+        console.log(per1.__proto__) // 인스턴스(자식)에서 부모 유전자 검색
+
+        const arr = new Array(1,2,3);
+        console.log(arr.toString());
+        console.log(Array)
+    </script>
+</body>
+</html>
