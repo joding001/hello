@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>방탈출 1423</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>퍼즐게임 1423</title>
     <style>
         #levelOneBox {
             width: 300px;
@@ -14,30 +15,36 @@
             border-radius: 20px;
         }
         #levelOneBox input {
+            
             width: 100px;
             height: 20px;
         }
         #levelOneBox input:hover {
             animation: inputHover 0.5s ease-in-out;
         }
-        @keyframes inputHover {
-            form {
-                border: 3px solid rgba(255, 255, 255, 0);
-            }
-            to {
-                border: 3px solid rgba(0, 183, 255, 1);
-            }
+
+        #level-1 > *:not(#levelOneBox) {
+            display: none;
+        }
+        #level-1 > #levelOneBox {
+            display: block;
+        }
+        #level-2 > *:not(#levelTwoBox) {
+            display: none;
+        }
+        #level-2 > #levelTwoBox {
+            display: block;
         }
     </style>
 </head>
 <body id="level-1">
     <div id="levelOneBox">
-        <h2>방탈출</h2>
+        <h2>퍼즐게임</h2>
         <input type="text" id="levelOneInput" />
     </div>
     <script>
-        document.querySelector('#levelOneBox #levelOneInput').addEventListener('input' function(){
-            if (document.querySelector('#levelOneBox #levelOneInput').value === '1423') {
+        $('#levelOneBox #levelOneInput').on('input', function(){
+            if ($(this).val() === '1423') {
                 document.body.id = 'level-2';
             }
         });
