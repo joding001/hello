@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step24_Class2</title>
+</head>
+<body>
+    <script>
+        /*
+            extends / super
+            - class 복사 문법
+        */
+
+        class Father {
+            constructor(n, c){
+                this.lastname = '신';
+                this.name = n;
+                this.age = 50;
+                this.city = c;
+            }
+            sayName(){
+                console.log(`${this.lastname}${this.name}, ${this.age}살`)
+            }
+        }
+
+        const fa = new Father('아빠', '떡잎마을');
+        console.log(fa);
+        console.log(Father.prototype);
+        console.log(fa.__proto__);
+        fa.sayName();
+
+        class Children extends Father {
+            constructor(name, city){
+                super(name, city);
+                this.age = 5;
+            }
+        }
+
+        const me = new Children('짱구', '팡팡유치원');
+        console.log(me);
+        console.log(Children.prototype);
+        me.sayName();
+    </script>
+</body>
+</html>

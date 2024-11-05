@@ -26,30 +26,38 @@ let img = [
   "img/25.webp",
 ];
 
-// for (let i = 0; i < array.length; i++) {
-  
-
-// }
 
 export function MakeImg(indexNum) {
   let galleryImage = new Image();
-  galleryImage.src = `img/${indexNum}.webp`
-  galleryImage.style.width = `${parseInt(Math.random() * 400) + 100}px`
-  let leftNum = -galleryImage.style.width;
-  galleryImage.style.left = leftNum + 'px'
+  galleryImage.src = `img/${indexNum}.webp`;
+  galleryImage.style.width = `${parseInt(Math.random() * 400) + 100}px`;
+  galleryImage.style.top = `${Math.max(0, Math.random() * (window.innerHeight - galleryImage.naturalWidth))}px`;  
+  let leftNum = 0 - parseInt(galleryImage.style.width.slice(0, -2));
+  galleryImage.style.left = `${leftNum}px`;
   document.querySelector('div#gallery').appendChild(galleryImage);
-  this.zImg = function(zIndex){
-    galleryImage.style.zIndex = zIndex;
-  }
-  this.speedImg = function(speed, delay){
-    setTimeout(function(){
-      setInterval(function(){
-        leftNum++;
-        galleryImage.style.left = leftNum + 'px'
-      }, speed)
-    }, delay * 10)
-  }
+  
+  this.galleryImage = galleryImage;
+  this.leftNum = leftNum;
 }
+
+MakeImg.prototype.zImg = function(zIndex) {
+  this.galleryImage.style.zIndex = zIndex;
+};
+
+MakeImg.prototype.speedImg = function(speed, delay) {
+  let galleryImage = this.galleryImage;
+  let leftNum = this.leftNum;
+  
+  setTimeout(function() {
+    setInterval(function() {
+      leftNum++;
+      galleryImage.style.left = `${leftNum}px`;
+      if (window.innerWidth <= leftNum) {
+        leftNum = 0 - parseInt(galleryImage.style.width.slice(0, -2));
+      }
+    }, speed);
+  }, delay);
+};
 
 /*
     [ MakeImg 생성자함수 ]

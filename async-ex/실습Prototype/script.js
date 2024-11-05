@@ -17,40 +17,63 @@
 
 import { MakeImg } from './export.js';
 
+function makeDivs(count) {
+    for (let i = 0; i < count; i++) {
+        let div = new MakeImg(parseInt(Math.random() * 24) + 1)
+        div.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+        div.zImg(parseInt(Math.random()*10));
+    }
+}
 
-let div0 = new MakeImg(parseInt(Math.random() * 24) + 1);
-div0.speedImg(10, 10);
-div0.zImg(20);
+// let div1 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// let div2 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// let div3 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// let div4 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// let div5 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// let div6 = new MakeImg(parseInt(Math.random() * 24) + 1);
 
-/*
-let div1 = new MakeImg(parseInt(Math.random() * 24) + 1);
-let div2 = new MakeImg(parseInt(Math.random() * 24) + 1);
-let div3 = new MakeImg(parseInt(Math.random() * 24) + 1);
-let div4 = new MakeImg(parseInt(Math.random() * 24) + 1);
-let div5 = new MakeImg(parseInt(Math.random() * 24) + 1);
-let div6 = new MakeImg(parseInt(Math.random() * 24) + 1);
+// div1.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div1.zImg(parseInt(Math.random()*10));
+// div2.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div2.zImg(parseInt(Math.random()*10));
+// div3.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div3.zImg(parseInt(Math.random()*10));
+// div4.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div4.zImg(parseInt(Math.random()*10));
+// div5.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div5.zImg(parseInt(Math.random()*10));
+// div6.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
+// div6.zImg(parseInt(Math.random()*10));
 
-div1.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div1.zImg(parseInt(Math.random()*10));
-div2.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div2.zImg(parseInt(Math.random()*10));
-div3.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div3.zImg(parseInt(Math.random()*10));
-div4.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div4.zImg(parseInt(Math.random()*10));
-div5.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div5.zImg(parseInt(Math.random()*10));
-div6.speedImg(parseInt(Math.random()*10),parseInt(Math.random()*10000));
-div6.zImg(parseInt(Math.random()*10));
-*/
+makeDivs(6)
+
+
+for (let i = 0; i < document.querySelector('#gallery').childElementCount; i++) {
+    document.querySelector(`#gallery img:nth-child(${i + 1})`).addEventListener('click', function(){
+        document.querySelector('#bg').style.display = 'block';
+        document.querySelector('#detail').style.display = 'block';
+        let detailImage = new Image();
+        detailImage.style.width = document.querySelector(`#gallery img:nth-child(${i + 1})`).style.width;
+        detailImage.src = document.querySelector(`#gallery img:nth-child(${i + 1})`).src;
+        document.querySelector('#detail').innerHTML = '';
+        document.querySelector('#detail').appendChild(detailImage);
+    });
+    
+}
+
+document.querySelector(`#bg`).addEventListener('click', function(){
+    document.querySelector('#bg').style.display = 'none';
+    document.querySelector('#detail').style.display = 'none';
+});
+
 
 /*
     export.js 다 작성후에 작성하세요.
     
     3. 각각 인스턴스를 만들기 귀찮으므로
-    MakeDivs라는 함수를 만들어서 인스턴스를 만들어주는 기능을 하도록 해보세요.
-    MakeDivs(6) -> 6개의 인스턴스가 생성되어야 함
-    MakeDivs 함수안에 각각 인스턴스들이 speedImg, zImg도 다르게 세팅되게 해보세요.
+    makeDivs라는 함수를 만들어서 인스턴스를 만들어주는 기능을 하도록 해보세요.
+    makeDivs(6) -> 6개의 인스턴스가 생성되어야 함
+    makeDivs 함수안에 각각 인스턴스들이 speedImg, zImg도 다르게 세팅되게 해보세요.
 
     4. 클릭시 #bg가 display:block으로 변하고 이미지가 화면 가운데 #detail에 생기게 해보세요.
     #detail은 현재 display:none적용되어있음

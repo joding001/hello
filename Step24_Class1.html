@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step24_Class1</title>
+</head>
+<body>
+    <script>
+        /*
+            [ Class ]
+            객체를 만들기 위한 템플릿
+
+            class 부모 {
+                constructor(){
+                    this.name = '짱구'
+                }
+            }
+
+            let 자식 = new 부모();
+        */
+
+        class Student {
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+                // 1번 방법 생성자함수에 직접 추가
+                // this.introduce = function(){
+                //     console.log(`${this.name}, ${this.age}살`);
+                // }
+            }
+            // 2번 방법 : 프로토타입으로 추가
+
+            introduce(){
+                console.log(`${this.name}, ${this.age}살`);
+            }
+        }
+
+        const stu1 = new Student('짱구', 5);
+        const stu2 = new Student('짱아', 2);
+    </script>
+</body>
+</html>
