@@ -24,9 +24,56 @@
 
 */
 
-function $(){
-  
+class JQuery extends Array {
+  constructor(selector) {
+    super();
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => this.push(el));
+  }
+
+  fadeIn(duration) {
+    this.forEach(el => {
+      el.style.opacity = 0;
+      el.style.display = 'block';
+      
+      let opacity = 0;
+      const increment = 4 / duration;
+      
+      const fadeInEffect = setInterval(() => {
+        opacity += increment;
+        if (opacity >= 1) {
+          opacity = 1;
+          clearInterval(fadeInEffect);
+        }
+        el.style.opacity = opacity;
+      }, 1);
+    });
+    return this;
+  }
+
+  removeClass(className) {
+    this.forEach(el => el.classList.remove(className));
+    return this;
+  }
+
+  addClass(className) {
+    this.forEach(el => el.classList.add(className));
+    return this;
+  }
+
+  attr(attribute) {
+    return this[0].getAttribute(attribute);
+  }
+
+  hasClass(className) {
+    return this.some(el => el.classList.contains(className));
+  }
 }
+
+const $ = function(selector) {
+  return new JQuery(selector);
+};
+
 
 $(".logo").fadeIn(1000);
 
