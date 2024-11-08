@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step27_SVG</title>
+    <style>
+        body {
+            margin: 0;
+            height: 3000px;
+        }
+        svg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 300px;
+        }
+        path {
+            stroke-dasharray: 870;
+            stroke-dashoffset: 870;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: brown;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 500 500">
+        <path id="line" d="M 10,250 Q 250,50 490,250 T 490,450"></path>
+    </svg>
+    <script>
+        console.log(document.querySelector('#line').getTotalLength());
+        const svg = document.querySelector('#line');
+        window.addEventListener('scroll', function(){
+            const scrollMax = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = window.scrollY / scrollMax
+            const animation = svg.animate(
+                [
+                    {strokeDashoffset: 870 - (scrollPercent * 870), stroke:`hsl(${scrollPercent * 360}, 100%, 50%)`}
+                ],
+                {
+                    fill:'forwards'
+                }
+            )
+        })
+    </script>
+</body>
+</html>

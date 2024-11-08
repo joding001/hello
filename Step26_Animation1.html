@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_Animation1</title>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        /*
+            [ Web Animation API ]
+            - 애니메이션 정의 및 제어를 위한 자바스크립트 API
+            - 애니메이션 효과를 쉽게 구현할 수 있음
+        */
+        const box = document.querySelector('.box');
+
+        // 애니메이션 정의
+        box.animate(
+            [
+                {transform : 'translateX(0px)'}, // 시작 상태
+                {transform : 'translateX(300px)'} // 끝 상태 
+            ],
+            {
+                duration : 1000, // 애니메이션 지속 시간 
+                iterations: Infinity, // 숫자 | Infinity 반복횟수
+                direction : 'alternate', // 방향
+                easing : 'ease-in-out'
+            }
+        )
+    </script>
+</body>
+</html>

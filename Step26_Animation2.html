@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step01_Animation1</title>
+    <title>Step26_Animation2</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+        }
+    </style>
 </head>
 <body>
     <div class="box"></div>
@@ -24,7 +32,8 @@
             {
                 duration : 1000, // 애니메이션 지속 시간 
                 iterations: Infinity, // 숫자 | Infinity 반복횟수
-                direction : 'alternate'
+                direction : 'alternate', // 방향
+                easing : 'ease-in-out'
             }
         )
     </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step26_Animation6</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+
+        const animation = box.animate(
+            [
+                {transform : 'translateX(0px)'},
+                {transform : 'translateX(300px)'}
+            ],
+            {
+                duration:1000,
+                fill:'forwards'
+            }
+        )
+
+        animation.finished.then((data)=>{
+            console.log(data);
+            console.log(data === animation);
+            console.log('애니메이션 완료!');
+            box.style.background = 'red';
+        })
+    </script>
+</body>
+</html>

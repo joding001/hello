@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step26_Animation3</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="animateBtn">CLICK</button>
+    <script>
+        /*
+            [ fill ]
+            애니메이션 완료된 후의 상태
+            none | forwards | backwards | both
+        */
+
+        const box = document.querySelector('.box');
+        const animateBtn = document.querySelector('#animateBtn');
+
+        animateBtn.addEventListener('click', ()=>{
+            box.animate(
+                [
+                    {transform:'translateX(0)'},
+                    // offset : 애니메이션 진행 상태를 나타냄 0.8 = 80%
+                    {transform:'translateX(200px)', offset:0.8},
+                    {transform:'translateX(100px)'}
+                ],
+                {
+                    duration: 2000,
+                    delay:1000,
+                    iterations:1,
+                    easing : 'ease-in-out',
+                    fill: 'forwards'
+                }
+            )
+        })
+    </script>
+</body>
+</html>

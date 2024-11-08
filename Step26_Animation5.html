@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step26_Animation5</title>
+    <style>
+        body {
+            height: 3000px;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: fixed;
+            top: 100px;
+            left: 0;
+        }
+        #demo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div class="box"></div>
+    <script>
+        /*
+            박스X위치  0px     500px
+            스크롤위치 0%      100%
+        */
+        const box = document.querySelector('.box');
+        // 스크롤 최대값
+        const scrollMax = document.body.scrollHeight - window.innerHeight;
+
+        window.addEventListener('scroll', ()=>{
+            // 현재스크롤값 / 전체스크롤값 = 스크롤 비율 0 ~ 1
+            const scrollPercent = window.scrollY / scrollMax
+            console.log(`scrollPercent : ${scrollPercent}`);
+            console.log(`scrollPercent * 100 : ${parseInt(scrollPercent) * 100}`);
+
+            const maxTranslateX = 500;
+            const translateXValue = scrollPercent * maxTranslateX;
+
+            const animation = box.animate(
+                [
+                    {transform : `translateX(${translateXValue}px)`}
+                ],
+                {
+                    fill : 'forwards'
+                }
+            )
+            animation.finish();
+            
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step26_Animation4</title>
+    <style>
+        body{
+            height: 2000px;
+            margin: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: fixed;
+            top: 100px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+
+        window.addEventListener('scroll', ()=>{
+            const scrollY = window.scrollY; // 현재스크롤위치
+            
+            const animation = box.animate(
+                [
+                    {transform : `translateX(${scrollY}px)`}
+                ],
+                {
+                    fill : 'forwards'
+                }
+            )
+            animation.finish();
+        });
+    </script>
+</body>
+</html>
