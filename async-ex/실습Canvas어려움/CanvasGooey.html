@@ -16,14 +16,22 @@
       canvas {
         filter: url("#gooey");
       }
+      h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -100;
+      }
     </style>
   </head>
   <body>
+    <h1>비오는 날</h1>
     <canvas></canvas>
     <svg>
       <defs>
         <filter id="gooey">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur1" />
+          <!-- <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur1" /> -->
           <feColorMatrix in="blur1" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 100 -23" />
         </filter>
       </defs>
@@ -36,6 +44,83 @@
         2. 원을 만들 때 원의 위치, 원의 크기, 움직이는 속도, 가속도 등을 설정하여 원을 움직이는 코드를 작성하세요.
         3. 원이 밖으로 나가면 다시 원이 처음으로 돌아와 움직이는 코드를 작성하세요.
       */
+      const canvas = document.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+
+      const dpr = window.devicePixelRatio;
+
+      let canvasWidth;
+      let canvasHeight;
+
+      function init(){
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+
+        canvas.style.width = canvasWidth +'px';
+        canvas.style.height = canvasHeight + 'px';
+
+        canvas.width = canvasWidth * dpr;
+        canvas.height = canvasHeight * dpr;
+        ctx.scale(dpr, dpr);
+      }
+
+      class Particle {
+        constructor(x, y, radius) {
+          this.x = x;
+          this.y = y;
+          this.radius = radius;
+          this.velocity = 0;
+          this.acceleration = 0.001;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, (Math.PI/180) * 360);
+          ctx.fillStyle = `hsl(240, 100%, 50%)`;
+          ctx.fill();
+        }
+
+        update() {
+          this.velocity += this.acceleration;
+          this.y += this.velocity;
+        }
+      }
+
+      function createParticle(x, y, radius) {
+        return new Particle(x, y, radius);
+      }
+
+      const particles = [];
+      setInterval(() => {
+        particles.push(createParticle(Math.random() * (window.innerWidth), 0, 5));
+      }, 1);
+
+      function animate() {
+        let animateId = requestAnimationFrame(animate);
+
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const particle = particles[i];
+
+          if (particle.y - particle.radius > canvasHeight) {
+            particles.splice(i, 1);
+          } else {
+            particle.update();
+            particle.draw();
+          }
+        }
+      }
+
+      window.addEventListener('load', () => {
+        init();
+        animate();
+      });
+
+      window.addEventListener('resize', () => {
+        init();
+        animate();
+      });
     </script>
   </body>
 </html>

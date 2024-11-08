@@ -1,20 +1,40 @@
-let sectionOneHeight = document.querySelector('#section01').offsetHeight * 5;
+let sectionOneHeight = document.querySelector('#section01').offsetHeight * 4;
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector('#section01 #imageSequence').style.backgroundRepeat = 'no-repeat';
-  document.querySelector('#section01 #imageSequence').style.backgroundSize = 'cover';
-  document.querySelector('#section01 #imageSequence').style.backgroundPositon = 'center center';
-  /*
-    스크롤에 따라 이미지가 변경되는 애니메이션을 만들어보세요.
+  const imageSequence = document.querySelector('#section01 #imageSequence');
+  imageSequence.style.backgroundRepeat = 'no-repeat';
+  imageSequence.style.backgroundSize = 'cover';
+  imageSequence.style.backgroundPosition = 'center center';
 
-    마지막에 WEB Animation API를 사용하여 스크롤의 비율이 0.95 이상이면
-    이미지가 서서히 사라지는 애니메이션을 만들어보세요.
-  */
   document.querySelector('#section01').style.height = sectionOneHeight + 'px';
 
-  window.addEventListener('scroll', function() {
-    document.querySelector('#section01 #imageSequence').style.backgroundImage = `url('images/001/large_${Math.round(getScrollRatio() * 110).toString().padStart(5, '0')}.jpg')`;
+  let lastScrollY = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateImageSequence();
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
+
+  function updateImageSequence() {
+    const scrollRatio = getScrollRatio();
+    const imageIndex = Math.round(scrollRatio * 110).toString().padStart(5, '0');
+    imageSequence.style.backgroundImage = `url('images/001/large_${imageIndex}.jpg')`;
+
+    // 이미지가 서서히 사라지도록 하는 애니메이션
+    if (scrollRatio >= 0.95) {
+      imageSequence.style.transition = 'opacity 0.5s ease';
+      imageSequence.style.opacity = 0;
+    } else {
+      imageSequence.style.transition = 'opacity 0.5s ease';
+      imageSequence.style.opacity = 1;
+    }
+  }
 });
 
 function getScrollRatio() {

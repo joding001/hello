@@ -27,6 +27,54 @@
             Bodies : 미리 정의된 행태의 Body 객체를 쉽게 생성할 수 있게하는 모듈
             Composites : 물리 엔진에서 사용할 물체들을 생성하는 역할
         */
+        const canvas = document.querySelector('canvas');
+        const cw = window.innerWidth;
+        const ch = window.innerHeight;
+
+        console.log(window.Matter);
+
+        const {Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint} = Matter;
+
+        // 물리엔진생성 - 물리적 부분을 담당
+        const engine = Engine.create({});
+
+        // 렌더러 생성 - 시각적 부분을 담당
+        const render = Render.create({
+            canvas : canvas, // 렌더링할 요소
+            engine : engine, // 물리 엔진
+            options : {
+                width : cw,
+                height : ch,
+                wireframes : false
+            }
+        });
+
+        // 렌더러 실행 - 러너 담당
+        const runner = Runner.create({});
+
+        Render.run(render); // 렌더러 실행
+        Runner.run(runner, engine); // 러너 실행
+
+        // 마우스 컨트롤 생성
+        const mouse = Mouse.create(canvas);
+
+        const mouseConstraint = MouseConstraint.create(engine, {
+            mouse:mouse
+        });
+
+        
+
+        const ground = Bodies.rectangle(cw/2, ch, cw, 100, {isStatic : true});
+
+        Composite.add(engine.world, [ground, mouseConstraint]);
+
+        createBox()
+
+        function createBox(){
+            const box = Bodies.circle(mouse.position.x, mouse.position.y, 100);
+            const box1 = Bodies.circle(mouse.position.x, mouse.position.y, 100);
+            Composite.add(engine.world, [box, box1]);
+        }
     </script>
 </body>
 </html>
