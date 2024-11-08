@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step28_Canvas2</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="400"></canvas>
+    <script>
+
+        function canvasInit(canvas, getContext, width, height){
+            const canvas = canvas;
+            const ctx = canvas.getContext(getContext + 'd');
+            const dpr = window.devicePixelRatio;
+            const width = width * dpr;
+            const height = height * dpr;
+            const canvas = 
+        }
+
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const dpr = window.devicePixelRatio;
+
+        let canvasWidth;
+        let canvasHeight;
+
+        function init(){
+            canvasWidth = window.innerWidth;
+            canvasHeight = window.innerHeight
+        }
+
+        class Particle {
+            constructor(x, y, radius){
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+            }
+
+            draw(){
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, (Math.PI/180) * 360)
+                ctx.fillStyle = 'red';
+                ctx.fill();
+            }
+        }
+
+        const x = 100
+        const y = 100
+        const radius = 50;
+
+        const particle = newParticle(x, y, radius);
+
+
+
+        window.addEventListener('load', ()=>{
+            init();
+        })
+
+        canvas.style.width = canvasWidth + 'px';
+        canvas.style.height = canvasHeight + 'px';
+        
+        canvas.width = canvasWidth * dpr;
+        canvas.height = canvasHeight * dpr;
+        ctx.scale(dpr, dpr);
+    </script>
+</body>
+</html>

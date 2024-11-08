@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step01_CanvasGooey.html</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      canvas {
+        filter: url("#gooey");
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <svg>
+      <defs>
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur1" />
+          <feColorMatrix in="blur1" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 100 -23" />
+        </filter>
+      </defs>
+    </svg>
+    <script>
+      /*
+        위의 filter는 원끼리 서로 겹치게 만드는 효과입니다.
+
+        1. Canvas 안에 원을 만들고 원을 움직이는 코드를 작성하세요.
+        2. 원을 만들 때 원의 위치, 원의 크기, 움직이는 속도, 가속도 등을 설정하여 원을 움직이는 코드를 작성하세요.
+        3. 원이 밖으로 나가면 다시 원이 처음으로 돌아와 움직이는 코드를 작성하세요.
+      */
+    </script>
+  </body>
+</html>
